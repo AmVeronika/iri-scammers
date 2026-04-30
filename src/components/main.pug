@@ -1,0 +1,90 @@
+main.main
+    .main__wrap
+        .block-1.container
+            ul.block-1__list
+                each content in data.main.blockOne[0].list
+                    li.block-1__item
+                        p.block-1__icon-wrap
+                            - var className = `block-1__icon--${content.icon}`
+                                img.block-1__icon(class=className src=`assets/images/${content.icon}.png` alt=content.alt)
+                        p.block-1__text !{content.text}
+            p.block-1__title
+                span !{data.main.blockOne[0].text[0]}
+                span !{data.main.blockOne[0].text[1]}
+        .block-2.container
+            h2.block-2__title !{data.main.blockTwo[0].title}
+            .block-2__list-wrap
+                ui.block-2__list.block-2__list--1
+                    each item, index in data.main.blockTwo[0].list
+                        if index <= 2
+                            +cardSign(item.title, item.list, item.icon, item.alt)
+                ui.block-2__list.block-2__list--2
+                    each item, index in data.main.blockTwo[0].list
+                        if index > 2
+                            +cardSign(item.title, item.list, item.icon, item.alt)
+        .block-3
+            .block-3__image
+            .block-3__list
+                .block-3__item
+                    h2.block-3__title !{data.main.blockThree[1].title}
+                    .block-3__text !{data.main.blockThree[1].text}
+                .block-3__item
+                    h2.block-3__title !{data.main.blockThree[2].title}
+                    .block-3__text !{data.main.blockThree[2].text}
+        .block-4.container
+            .block-4__list
+                each item, index in data.main.blockFour[0].list
+                    - var className = `block-4__item--${index}`
+                        .block-4__item(class=className)
+                            .block-4__item-title !{item.title}
+                            .block-4__item-text !{item.text}
+                            .block-4__item-image
+                                - var className = `block-4__item-icon--${item.icon}`
+                                    img.block-4__item-icon(class=className src=`assets/images/${item.icon}.png` alt=item.alt)
+            h2.block-4__title !{data.main.blockFour[0].title}
+            .block-4__text !{data.main.blockFour[0].text}
+        .block-5
+            .block-5__wrap
+                .block-5__0
+                    p.block-5__0-text.block-5__0-text--1 !{data.main.blockFive[0][0].text}
+                    p.block-5__0-text.block-5__0-text--2 !{data.main.blockFive[0][1].text}
+                .block-5__1
+                    .block-5__1-text !{data.main.blockFive[1].text}
+                    .block-5__1-list
+                        each item, index in data.main.blockFive[1].list
+                            if index < 2
+                                .block-5__1-item
+                                    .block-5__1-item-text !{item}
+                    .block-5__1-list
+                        each item, index in data.main.blockFive[1].list
+                            if index >= 2
+                                .block-5__1-item
+                                    .block-5__1-item-text !{item}
+            .block-5__2
+                h2.block-5__2-title !{data.main.blockFive[2].title}
+                .block-5__2-list
+                    each item, index in data.main.blockFive[2].list
+                        - var className = `block-5__2-item--${index}`
+                            .block-5__2-item(class=className)
+                                - var className = `block-5__2-item-icon--${item.icon}`
+                                    img.block-5__2-item-icon(class=className src=`assets/images/icons/${item.icon}.svg` alt=item.alt)
+                                p.block-5__2-item-text
+                                    each el in item.text
+                                        span !{el}
+                p.block-5__2-text
+                    each el in data.main.blockFive[2].text
+                        span !{el}
+        .block-6
+            h2.block-6__title !{data.main.blockSix[0].title}
+            .block-6__list
+                each item, index in data.main.blockSix[0].list
+                    - var className = `block-6__item--${index}`
+                        .block-6__item(class=className)
+                            .block-6__item-text !{item.text}
+                            if item.button
+                                a.block-6__item-button(href=item.button.link target="_blank") !{item.button.text}
+
+
+
+
+

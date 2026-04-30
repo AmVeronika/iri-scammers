@@ -1,0 +1,3 @@
+@function percent($px, $base: 1) {
+    @return 100% * math.div($px, $base);
+}

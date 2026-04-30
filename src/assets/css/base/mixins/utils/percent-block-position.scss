@@ -1,0 +1,7 @@
+// The most common case Left and Top
+// Pass parameters to override
+
+@mixin percent-block-position($x-px, $y-px, $parent-width-px: 100, $parent-height-px: 100, $horizontal: left, $vertical: top) {
+    #{$horizontal}: percent($x-px, $parent-width-px);
+    #{$vertical}: percent($y-px, $parent-height-px);
+}

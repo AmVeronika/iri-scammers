@@ -1,0 +1,4 @@
+@mixin percent-block-size($w-px, $h-px, $parent-width-px: 100, $parent-height-px: 100) {
+    width: percent($w-px, $parent-width-px);
+    height: percent($h-px, $parent-height-px);
+}

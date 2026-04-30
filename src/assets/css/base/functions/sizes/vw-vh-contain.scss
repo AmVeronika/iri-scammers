@@ -1,0 +1,10 @@
+@import "./vw.scss";
+@import "./vh.scss";
+
+@function vw-vh-contain($px, $mobile: false) {
+    $vw: vw($px, $mobile);
+    $vh: vh($px, $mobile);
+
+    // very cool kostyl coz sass is case-sensitive, but css isn't
+    @return Min(#{$vw}, #{$vh});
+}

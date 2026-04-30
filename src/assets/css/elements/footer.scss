@@ -1,0 +1,28 @@
+.footer {
+    $fs: 14;
+    $fs-mb: 14;
+
+    background: #243467;
+
+    @media (--viewport-mobile-pt) {
+        font-size: vw-vh-contain($fs-mb, true);
+    }
+
+    &__advertiser {
+        text-align: center;
+        padding-top: em(23, $fs);
+        padding-bottom: em(23, $fs);
+        line-height: 120%;
+
+        &:not(.entered) {
+            transition-duration: 0.4s;
+            opacity: 0;
+            transform: translateY(em(-20, $fs));
+        }
+
+        @media (--viewport-mobile-pt) {
+            padding-top: em(15.5, $fs-mb);
+            padding-bottom: em(15.5, $fs-mb);
+        }
+    }
+}

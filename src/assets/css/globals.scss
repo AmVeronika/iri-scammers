@@ -1,0 +1,86 @@
+@import "base/mixins/reduced-motion.scss";
+@import "base/mixins/reset.scss";
+@import "mixins/font-size.scss";
+
+/* main styles */
+html,
+body {
+    text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    text-rendering: optimizelegibility;
+    font-family: $font-default;
+    font-size: vw($base-px-desktop);
+    font-weight: $font-weight-default;
+    color: $color-text;
+    height: auto;
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+
+    @include font-size;
+    @include reduced-motion;
+}
+
+html {
+    background: #16244e;
+}
+
+@include reset;
+
+// Remove if total buttons reset is not needed
+a,
+button {
+    @include reset-btn;
+}
+
+a {
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color ease-in-out 0.2s;
+
+    &:hover {
+        color: rgb(24 151 255 / 77%);
+        transition: color ease-in-out 0.2s;
+    }
+}
+
+b,
+strong {
+    /* Customizing font-weight according to design */
+
+    /* e.g. Semi Bold */
+    font-weight: $font-weight-accent;
+}
+
+.container {
+    width: 100%;
+    padding-left: $padding-x-content-desktop;
+    padding-right: $padding-x-content-desktop;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (--viewport-mobile-pt) {
+        padding-left: $padding-x-content-mobile;
+        padding-right: $padding-x-content-mobile;
+    }
+}
+
+.link-underline {
+    text-decoration: underline;
+}
+
+.blue-text {
+    color: $color-text-accent;
+}
+
+.link-bg {
+    color: $color-text-accent;
+}
+
+.entered {
+    transition: transform 0.6s ease-out, opacity 0.8s ease-out;
+    opacity: 1;
+    transform: translate(0, 0);
+}

@@ -1,0 +1,49 @@
+@use "sass:math";
+
+// colors
+$color-bg: #16244e;
+$color-bg-light: #f1f1f1;
+$color-text: #fff;
+$color-text-dark: #25366b;
+$color-text-accent: #0062ff;
+
+// text
+$font-default: "Lora", system-ui, serif;
+$font-accent: "ZametkaParletter", system-ui, sans-serif;
+
+// Basing Weights
+$font-weight-default: 400;
+$font-weight-accent: 600;
+$font-weight-bold: 600;
+$base-px-desktop: 18;
+$base-width-desktop: 1400;
+$base-height-desktop: 787;
+$max-width-desktop: 1440;
+
+// add
+$base-px-mb: 18;
+$base-width-mb: 393;
+$base-height-mb: 852;
+
+// Font sizes
+// to calc 1rem with poly-fluid-sizing
+$map-font-size-lp: (
+    560px: 18px,
+    850px: 18px,
+    852px: 18px,
+    1440px: 18px
+);
+$map-font-size-pt: (
+    320px: 16px,
+    393px: 18px,
+    425px: 18px,
+    1024px: 18px
+);
+
+// Add one more variable if mobile line-height differs from desktop one
+$line-height-default: math.div(24, $base-px-desktop);
+
+// Line height of accent font family text
+$line-height-accent: math.div(126, 140);
+$padding-x-content-desktop: em(100, $base-px-desktop);
+$padding-x-content-mobile: em(30, $base-px-mb);

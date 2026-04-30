@@ -1,0 +1,65 @@
+.header {
+    $fs: $base-px-desktop;
+    $fs-mb: $base-px-mb;
+
+    font-size: vw($fs);
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+
+    @media (--viewport-mobile-pt) {
+        font-size: vw-vh-contain($fs-mb, true);
+    }
+
+    &__title {
+        width: 100%;
+        text-align: center;
+        padding-top: vh(428);
+
+        @media (--viewport-mobile-pt) {
+            padding-top: vh(65, true);
+        }
+    }
+
+    &__h1 {
+        font-size: em(130, $fs);
+        line-height: 100%;
+        font-family: $font-accent;
+        font-weight: $font-weight-default;
+        color: $color-text-accent;
+        text-transform: uppercase;
+        transition-duration: 0.9s;
+
+        @media (--viewport-mobile-pt) {
+            font-size: em(50, $fs-mb);
+            display: flex;
+            flex-direction: column;
+        }
+
+        &:not(.entered) {
+            opacity: 0;
+            transform: translateY(em(-4, $fs));
+        }
+    }
+
+    &__subtitle {
+        font-size: em(36, $fs);
+        line-height: 110%;
+        text-align: left;
+        transition-duration: 0.6s;
+        transition-delay: 0.2s;
+
+        @media (--viewport-mobile-pt) {
+            font-size: em(18, $fs-mb);
+            line-height: 120%;
+            margin-top: em(20, 18);
+            text-align: center;
+        }
+
+        &:not(.entered) {
+            opacity: 0;
+            transform: translateY(em(-8, $fs));
+        }
+    }
+}

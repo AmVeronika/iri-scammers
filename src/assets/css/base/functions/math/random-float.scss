@@ -1,0 +1,3 @@
+@function random-float($delta: 1, $start: 0) {
+    @return $start + random($delta * 100) * 0.01;
+}

@@ -1,0 +1,19 @@
+@import "../base/mixins/poly-fluid-with-extrapolation.scss";
+
+// COMMON CASE
+// Customize if necessary
+
+// (Is already in use. So there's no need to import and use it again)
+
+@mixin font-size {
+    // The basic font size for text content
+    font-size: $base-px-desktop * 1px;
+    font-weight: $font-weight-default;
+    line-height: $line-height-default;
+
+    // Add
+    // $fixFirst: false or/and $fixLast: true
+    // to switch on extrapolation outside map boundaries
+    @include poly-fluid-sizing-with-extrapolation("font-size", $map-font-size-lp);
+    @include poly-fluid-sizing-with-extrapolation("font-size", $map-font-size-pt, $orientation: portrait, $cancelDefault: true);
+}
