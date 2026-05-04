@@ -1,8 +1,0 @@
-// You need to define position: relative | absolute | fixed by you self
-
-@mixin block-size-fixed-aspect($w-px, $h-px, $parent-width-px: 100) {
-    width: percent($w-px, $parent-width-px);
-    padding-top: percent($h-px, $parent-width-px);
-    height: 0;
-    line-height: 0;
-}

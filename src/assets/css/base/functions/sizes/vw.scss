@@ -1,5 +1,0 @@
-@function vw($px, $mobile: false) {
-    $base: if($mobile == true, $base-width-mb, $base-width-desktop);
-
-    @return $px * math.div(100, $base) * 1vw;
-}

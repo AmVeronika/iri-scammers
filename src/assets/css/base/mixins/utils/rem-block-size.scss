@@ -1,4 +1,0 @@
-@mixin rem-block-size($w-px, $h-px, $mobile: false) {
-    width: rem($w-px, $mobile);
-    height: rem($h-px, $mobile);
-}

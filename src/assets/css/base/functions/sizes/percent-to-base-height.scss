@@ -1,7 +1,0 @@
-@import "./percent.scss";
-
-@function percent-to-base-height($px, $mobile: false) {
-    $base: if($mobile == true, $base-height-mb, $base-height-desktop);
-
-    @return percent($px, $base);
-}

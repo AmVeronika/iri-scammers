@@ -1,5 +1,0 @@
-@function rem($px, $mobile: false) {
-    $base: if($mobile == true, $base-px-mb, $base-px-desktop);
-
-    @return math.div($px, $base) * 1rem;
-}

@@ -1,5 +1,0 @@
-@function vh($px, $mobile: false) {
-    $base: if($mobile == true, $base-height-mb, $base-height-desktop);
-
-    @return $px * math.div(100, $base) * 1vh;
-}

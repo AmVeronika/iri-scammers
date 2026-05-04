@@ -1,4 +1,0 @@
-@mixin rem-block-size($w-px, $h-px, $ref-font-size-px: 16) {
-    width: em($w-px, $ref-font-size-px);
-    height: em($h-px, $ref-font-size-px);
-}

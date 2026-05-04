@@ -1,8 +1,0 @@
-@import "vars-scss";
-
-// Register css-variables to make use of in RUNTIME only
-:root {
-    // THEME COLORS
-    --color-main-back: #{$color-bg};
-    --color-main-text: #{$color-text};
-}
